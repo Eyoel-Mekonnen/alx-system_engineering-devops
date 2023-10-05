@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -t | find -type f | head -n 10  
+find . -type f | ls -t | head n -10  
