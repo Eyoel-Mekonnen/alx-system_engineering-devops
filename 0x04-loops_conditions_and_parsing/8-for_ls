@@ -2,7 +2,8 @@
 #Displays the contents of the current directory
 #Displays it in a list format
 #part of the name after the first dash has been trimmed
-for variable in *
+list=$(ls)
+for variable in $list
 do
 	echo "${variable#*-}"
 done
