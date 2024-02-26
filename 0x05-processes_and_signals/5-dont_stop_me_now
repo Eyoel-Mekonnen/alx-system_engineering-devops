@@ -1,9 +1,4 @@
 #!/usr/bin/env bash
 #kill the 4-to_infinity_and_beyond after finding its pid
-pid_=$(pgrep 4-to_infinity_and_beyond)
-if [ -n "$pid_" ]
-then
-	kill $pid_
-else
-	echo "Process Not Found"
-fi
+pid_s=$(pgrep -f 4-to_infinity_and_beyond)
+kill "$pid_s"
