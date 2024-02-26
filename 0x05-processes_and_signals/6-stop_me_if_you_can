@@ -2,4 +2,4 @@
 #kill 4-to_infinity_and_beyond using pkill
 #major difference is to kill you need to the process ID
 #but with pkill it uses patter matching like name
-pkill 4-to_infinity_and_beyond
+pkill -f 4-to_infinity_and_beyond
