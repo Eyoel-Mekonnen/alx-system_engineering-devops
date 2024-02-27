@@ -1,0 +1,28 @@
+#include <stdlib.h>
+/**
+ *
+ *
+ */
+int main(int argc, char *argv[])
+{
+	char *commit = NULL;
+	char *git_add = "git add .";
+	char *git_push = "git push ";
+	int i;
+
+	if (argc > 2)
+		fprintf(stderr, "Error: Please input one argument after git__ or use \"\"");
+	commit = argv[1];
+	for (i = 0; commit[i] != '\0'; i++)
+	{
+		if (!((commit[i] >= 'A' && commit[i] <= 'Z') || (commit[i] >= 'a' && commit[i] <= 'z') || (commit[i] >= '0' && commit[i] <= '9')))
+			fprintf(stderr, "Commit should be Alphabet messages only");
+	}
+	if (system(git_add) != 0)
+		fprintf(stderr, "Error: can not git add");
+	if (system(commit) != 0)
+		fprintf(stderr, "Error: can not git commit");
+	if (system(git_push) != 0)
+		fprintf(stderr, "Error: can git push");
+	return (0);	
+}
