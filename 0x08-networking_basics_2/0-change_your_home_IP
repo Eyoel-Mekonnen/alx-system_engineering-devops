@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#resolves and changes IP address of DNS
+cp /etc/hosts ~/hosts.new
+sed -i 's/127\.0\.0\.1/127.0.0.2/g' ~/hosts.new
