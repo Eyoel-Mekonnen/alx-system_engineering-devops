@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#listnes on port 
+nc -l localhost 98
