@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+PATH_TO_FILE=$1
+IP=$2
+USERNAME=$3
+PATH_SSH=$4
+scp -i "$PATH_SSH" -o  StrictHostKeyChecking=no "$PATH_TO_FILE" "$USERNAME"@"$IP":~/
