@@ -3,6 +3,7 @@
 apt-get -y update
 apt-get -y install nginx
 ufw allow 'Nginx HTTP'
+echo 'Hello World!' > /var/www/html/index.html
 echo "server {
 	listen 80;
 	listen [::]:80 default_server;
@@ -10,7 +11,7 @@ echo "server {
 	index index.html index.htm index.nginx-debian.html;
 	server_name _;
 	location /redirect_me {
-		return 301 http://youtube.com
+		return 301 http://youtube.com;
 	}
 }" > /etc/nginx/sites-available/default
 if service nginx status | grep -q "running"
