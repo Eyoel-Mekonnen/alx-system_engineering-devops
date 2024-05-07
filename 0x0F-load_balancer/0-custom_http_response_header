@@ -1,24 +1,28 @@
 #!/usr/bin/env bash
 # Shows custom Header Response
-apt-get -y update
-apt-get -y install nginx
+if [[ $EUID -ne 0 ]]; then
+	exit 1
+fi
+sudo apt-get -y update
+sudo apt-get -y install nginx
 ufw allow 'Nginx HTTP'
 echo "Hello World" > /var/www/html/index.html
 echo "Ceci n'est pas une page" > /var/www/html/404.html
 sudo chmod 644 /var/www/html/404.html
-echo "server {
+sudo echo "server {
 	listen 80;
 	listen [::]:80 default_server;
 	root /var/www/html;
 	index index.html index.htm index.nginx-debian.html;
 	server_name _;
-	
+	add_header X-Served-By "$HOSTNAME";	
 	location / {
 		add_header X-Served-By "$HOSTNAME";
 		try_files \$uri \$uri/ =404;
 	}
 }" > /etc/nginx/sites-available/default
 nginx -t
+sudo systemctl reload nginx
 if service nginx status | grep -q "running"
 then
 	service nginx restart
