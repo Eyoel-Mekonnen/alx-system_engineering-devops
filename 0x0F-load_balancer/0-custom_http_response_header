@@ -18,15 +18,7 @@ sudo echo "server {
 	server_name _;
 	add_header X-Served-By "$HOSTNAME";	
 	location / {
-		add_header X-Served-By "$HOSTNAME";
 		try_files \$uri \$uri/ =404;
 	}
-}" >> /etc/nginx/sites-available/default
-nginx -t
-sudo systemctl reload nginx
-if service nginx status | grep -q "running"
-then
-	service nginx restart
-else
-	service nginx start
-fi
+}" > /etc/nginx/sites-available/default
+service nginx start
