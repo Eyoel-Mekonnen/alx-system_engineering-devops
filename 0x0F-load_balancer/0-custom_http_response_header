@@ -9,6 +9,7 @@ ufw allow 'Nginx HTTP'
 echo "Hello World" > /var/www/html/index.html
 echo "Ceci n'est pas une page" > /var/www/html/404.html
 sudo chmod 644 /var/www/html/404.html
+HOSTNAME=$(hostname)
 sudo echo "server {
 	listen 80;
 	listen [::]:80 default_server;
