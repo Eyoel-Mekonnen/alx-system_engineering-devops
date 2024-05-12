@@ -1,18 +1,1 @@
-Have you ever wondered What Happens When You Enter https://www.google.com in Your Browser? Well here is a brief explanation of what is happening
-1) DNS Request: Typing www.google.com initiates a DNS lookup to convert the domain into a machine-readable IP address. This multi-step process involves your browser's cache, system cache, router, and ISP's DNS server. If these caches don't have the address, the query escalates through recursive DNS servers, reaching the root, TLD (Top-Level Domain), and finally the authoritative DNS servers that respond with Google's IP address.
-2) TCP/IP Connection: The resolved IP address allows your computer to establish a TCP connection with Google’s server. This connection starts with a three-way handshake—your browser sends a SYN packet, Google’s server replies with a SYN-ACK, and your browser responds with an ACK—ensuring a reliable connection is established.
-3)Firewall: As your request travels to Google and responses return, it passes through multiple firewalls. These include your local network firewall, your ISP's firewall, and Google's own firewalls. They scrutinize the data packets to prevent security threats, ensuring only safe and legitimate traffic is processed.
-4) HTTPS/SSL (Secure Communication):
-SSL Handshake: This secure communication protocol kicks in after the initial TCP connection.
-Client Hello: Your browser sends a Client Hello message, which includes the SSL version, supported cipher suites, and a random number.
-Server Hello: Google's server responds with a Server Hello, selecting a cipher suite and sending back its digital certificate containing the public key.
-Authentication: Your browser verifies Google’s certificate against known certificate authorities to confirm authenticity.
-Key Exchange: The browser encrypts a pre-master secret using the server's public key and sends it over. The server decrypts this to establish a symmetric session key.
-Secure Communication: With the session key, all subsequent data is encrypted and securely exchanged between your browser and Google’s server.
-5) Load Balancer:
-Traffic Distribution: Google employs load balancers to manage the massive influx of internet traffic, ensuring no single server is overwhelmed.
-6) Web Server: The web server handles incoming HTTP requests from clients like web browsers. When you visit https://www.google.com, the web server's job is:
-Static Content Delivery: Directly serves static files such as HTML, CSS, and JavaScript.
-Request Routing: For dynamic content requests (e.g., search queries), the web server forwards them to the application server for processing.
-7) Application Server: The application server processes dynamic content. It operates between the web server and the backend database, executing complex business logic:
-8) Database: Application servers query databases to fetch data needed to compile the response, such as search results, which are then sent back to the user.
+https://www.linkedin.com/feed/update/urn:li:share:7195376152151031808/
