@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#installs Proxy and configures it
+
+sudo apt update
+sudo apt -y install haproxy
+sudo echo "frontend http80
+		bind *:80
+		timeout client 60s
+      backend appservers
+      		timeout connect 10s
+		timeout servers 10s
+		balance roundrobin
+		server 530556-web-01 52.206.122.159:80
+		server 530556-web-02 18.208.120.100:80
+      " >> /etc/haproxy/haproxy.cfg
+sudo haproxy start
+
+
