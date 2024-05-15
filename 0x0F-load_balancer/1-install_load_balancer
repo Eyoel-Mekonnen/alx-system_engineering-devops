@@ -8,6 +8,7 @@ echo "ENABLED=1" > /etc/default/haproxy
 
 sudo echo "frontend http80
                 bind *:80
+		default_backend appservers
 backend appservers
         balance roundrobin
 	mode http
