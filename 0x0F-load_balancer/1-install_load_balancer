@@ -1,13 +1,18 @@
 #!/usr/bin/env bash
 #installs Proxy and configures it
 
-sudo apt update
-sudo apt -y install haproxy
+apt-get install -y software-properties-common
+add-apt-repository -y ppa:vbernat/haproxy-1.8
+apt-get -y update
+
+
+echo "ENABLED=1" > /etc/default/haproxy
 
 sudo echo "frontend http80
                 bind *:80
 backend appservers
         balance roundrobin
+	mode http
         server 530556-web-01 52.206.122.159:80 check
         server 530556-web-02 18.208.120.100:80 check
       " >> /etc/haproxy/haproxy.cfg
