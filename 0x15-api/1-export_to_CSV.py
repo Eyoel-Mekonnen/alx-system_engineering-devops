@@ -29,6 +29,6 @@ if __name__ == "__main__":
     file_name = "USER_ID.csv"
     with open(file_name, 'w') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=fields)
-        writer.writeheader()
+        #writer.writeheader()
         for row in list_:
             writer.writerow(row)
