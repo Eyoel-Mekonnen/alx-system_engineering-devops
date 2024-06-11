@@ -28,7 +28,7 @@ if __name__ == "__main__":
     fields = ['USER_ID', 'USERNAME', 'TASK_COMPLETED_STATUS', 'TASK_TITLE']
     file_name = "USER_ID.csv"
     with open(file_name, 'w') as csvfile:
-        writer = csv.DictWriter(csvfile, fieldnames=fields)
+        writer = csv.DictWriter(csvfile, quoting=csv.QUOTE_ALL, fieldnames=fields)
         #writer.writeheader()
         for row in list_:
             writer.writerow(row)
