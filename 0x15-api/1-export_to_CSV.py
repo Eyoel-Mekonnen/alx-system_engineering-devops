@@ -26,7 +26,7 @@ if __name__ == "__main__":
             list_.append(csv_dict)
 
     fields = ['USER_ID', 'USERNAME', 'TASK_COMPLETED_STATUS', 'TASK_TITLE']
-    file_name = "USER_ID.csv"
+    file_name = "{}.csv".format(id_)
     with open(file_name, 'w') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=fields,
                                 quoting=csv.QUOTE_ALL)
