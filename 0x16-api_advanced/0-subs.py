@@ -2,6 +2,7 @@
 """retreives the amount of subscribers from reddit"""
 import requests
 
+
 def number_of_subscribers(subreddit):
     """Takes in the subreddit to look for"""
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
@@ -14,4 +15,6 @@ def number_of_subscribers(subreddit):
         number_of_subscribers = api_subscribers['data']['subscribers']
         return number_of_subscribers
     elif api_subscribers_data.status_code == 404:
+        return 0
+    else:
         return 0
