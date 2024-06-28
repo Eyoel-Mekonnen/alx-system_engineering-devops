@@ -13,5 +13,5 @@ def number_of_subscribers(subreddit):
         api_subscribers = api_subscribers_data.json()
         number_of_subscribers = api_subscribers['data']['subscribers']
         return number_of_subscribers
-    else:
+    elif api_subscribers_data.status_code == 404:
         return 0
