@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""retreives the amount of subscribers from reddit"""
 import requests
 
 def number_of_subscribers(subreddit):
