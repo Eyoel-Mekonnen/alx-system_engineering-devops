@@ -36,4 +36,4 @@ def recurse(subreddit, hot_list=None, after="", i=0):
         if new_after is None: #or i >= 100:
             return hot_list
         else:
-            return recurse(subreddit, hot_list, new_after, i)
+            return recurse(subreddit, hot_list.sort(), new_after, i)
