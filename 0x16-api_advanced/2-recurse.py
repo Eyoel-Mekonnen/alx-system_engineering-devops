@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""recursievly retrieves data from subreddit"""
 import time
 """Recursive hot post retreival"""
 import requests
