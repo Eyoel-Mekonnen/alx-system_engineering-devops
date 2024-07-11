@@ -27,7 +27,7 @@ def recurse(subreddit, hot_list=None, after="", i=0):
         for child in children:
             title = ""
             title = child['data']['title']
-            print(title)
+            #print(title)
             hot_list.append(title)
             i = i + 1
             #print("I am the after {} being passed to the next one".format(after))
