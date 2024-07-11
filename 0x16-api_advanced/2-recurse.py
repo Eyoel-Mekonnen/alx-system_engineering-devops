@@ -34,6 +34,6 @@ def recurse(subreddit, hot_list=None, after="", i=0):
             #print("I am the subreddit being passed {}".format(url))
             #time.sleep(1)
         if new_after is None: #or i >= 100:
-            return hot_list
+            return hot_list.sort()
         else:
-            return recurse(subreddit, hot_list.sort(), new_after, i)
+            return recurse(subreddit, new_after, i)
